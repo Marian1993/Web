@@ -1,6 +1,5 @@
 <?php
   include_once"session.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,32 +11,20 @@
 </head>
 <body>
     <?php
-
-    $servername = "localhost";
-    $username = "mamm";
-    $password = "mamm";
-    $dbname = "web";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password,$dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql = "SELECT * FROM Hamburguesa;";
+    $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa;";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
-        echo "Tipus: " . $row["tipus"]. "<br>";
-        echo "<img src=\" ./Img/" . $row["id"].".jpg\"> <br>";
+        echo "Nom: " . $row["nom"]. "<br>". "Tipus de carn: " . $row["tipusCarn"].
+         "<br>". "Preu: " . $row["preu"]. "<br>";
+        echo "<img src=\" ./Img/" . $row["id"].".jpg\" height=\"150\" width=\"200\"> <br>";
       }
     } else {
       echo "0 results";
    }
+   mysqli_close($conn);
 ?>
 </body>
 </html>
