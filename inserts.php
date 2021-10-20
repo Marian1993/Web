@@ -1,6 +1,3 @@
-<?php
-include_once"sessio.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,19 +8,16 @@ include_once"sessio.php";
 </head>
 <body>
 <form method="post" action="process.php">
-		First name:<br>
-		<input type="text" name="first_name">
+		Nom:<br>
+		<input type="text" name="nom">
 		<br>
-		Last name:<br>
-		<input type="text" name="last_name">
+		Tipus de carn:<br>
+		<input type="text" name="tipusCarn">
 		<br>
-		City name:<br>
-		<input type="text" name="city_name">
-		<br>
-		Email Id:<br>
-		<input type="email" name="email">
+		Preu:<br>
+		<input type="text" name="preu">
 		<br><br>
-		<input type="submit" name="save" value="submit">
-	</form>
+		<input type="submit" name="save" value="Enviar">
+</form>
 </body>
 </html>
