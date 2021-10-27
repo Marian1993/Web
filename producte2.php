@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="row"><img src="./Img/<?=echo $row["id"];?>.jpg" height="150px" width="200px"></div>
+        <div class="row"><img src="./Img/<?=$row["id"];?>.jpg" height="150px" width="200px"></div>
         <div class="row"><?= echo $row["nom"];?></div>
         <div class="row"><?= echo $row["preu"];?></div>
         <div class="row"><?= echo $row["tipusCarn"];?></div>
