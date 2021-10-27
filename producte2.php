@@ -3,6 +3,15 @@
 
     $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
     $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        // output data of each row
+        $row = $result->fetch_assoc();
+          echo "<img src=\" ./Img/" . $row["id"].".jpg\" height=\"150\" width=\"200\"> <br>";
+          echo "Nom: " . $row["nom"]. "<br>". "Tipus de carn: " . $row["tipusCarn"].
+           "<br>". "Preu: " . $row["preu"]. "<br>";
+      } else {
+        echo "No hi ha tantes hamburgueses";
+     }
     
 ?>
 <!DOCTYPE html>
@@ -19,6 +28,13 @@
             <p><a href="llista.php">Tornar</a></p>
         </div>
     </div>
+    <?php
+    $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        // output data of each row
+        $row = $result->fetch_assoc();
+        ?>
     <div class="container">
         <div class="row"><img src="./Img/<?php echo $row["id"];?>.jpg" height="150px" width="200px"></div>
         <div class="row"><?php echo $row["nom"];?></div>
@@ -28,6 +44,11 @@
             <button>Afegir al carreto</button>
         </div>
     </div>
-    <?= mysqli_close($conn);?>
+    <?php
+    } else {
+        echo "No hi ha tantes hamburgueses";
+     }
+     mysqli_close($conn);
+     ?>
 </body>
 </html>
