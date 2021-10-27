@@ -19,10 +19,6 @@
             <p><a href="llista.php">Tornar</a></p>
         </div>
     </div>
-    <?=if ($result->num_rows > 0) {
-      // output data of each row
-      $row = $result->fetch_assoc();
-      ?>
     <div class="container">
         <div class="row"><img src="./Img/<?=echo $row["id"];?>.jpg" height="150px" width="200px"></div>
         <div class="row"><?= echo $row["nom"];?></div>
@@ -31,9 +27,6 @@
         <div class="row">
             <button>Afegir al carreto</button>
         </div>
-    <?=} else {
-      echo "No hi ha tantes hamburgueses";
-    }?>
     </div>
     <?= mysqli_close($conn);?>
 </body>
