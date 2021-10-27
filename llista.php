@@ -1,5 +1,5 @@
 <?php
-  include_once"session.php";
+  include_once"sessio.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,6 @@
         echo "Nom: " . $row["nom"]. "<br>". "Tipus de carn: " . $row["tipusCarn"].
          "<br>". "Preu: " . $row["preu"]. "<br>";
         echo "<img src=\" ./Img/" . $row["id"].".jpg\" height=\"150\" width=\"200\"> <br>";
-        echo "<a"
       }
     } else {
       echo "0 results";
