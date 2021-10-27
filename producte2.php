@@ -20,10 +20,10 @@
         </div>
     </div>
     <div class="container">
-        <div class="row"><img src="./Img/<?=$row["id"];?>.jpg" height="150px" width="200px"></div>
-        <div class="row"><?= $row["nom"];?></div>
-        <div class="row"><?= $row["preu"];?></div>
-        <div class="row"><?= $row["tipusCarn"];?></div>
+        <div class="row"><img src="./Img/<?php echo $row["id"];?>.jpg" height="150px" width="200px"></div>
+        <div class="row"><?php echo $row["nom"];?></div>
+        <div class="row"><?php echo $row["preu"];?></div>
+        <div class="row"><?php echo $row["tipusCarn"];?></div>
         <div class="row">
             <button>Afegir al carreto</button>
         </div>
