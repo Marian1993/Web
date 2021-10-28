@@ -17,51 +17,47 @@ include_once"sessio.php";
       <p><a href="llista.php"><br>Tornar<br><br><br></a></p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12 text-center">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">N Producto</th>
-            <th scope="col">Imagen</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php
-          $sql = "SELECT id, nom, preu FROM Hamburguesa;";
-          $result = $conn->query($sql);
-          $total = 0;
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">N Producto</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php
+        $sql = "SELECT id, nom, preu FROM Hamburguesa;";
+        $result = $conn->query($sql);
+        $total = 0;
 
-          if ($result->num_rows < 0) {
-              // output data of each row
-              while($row = $result->fetch_assoc()) {
-                $total += $row["preu"];
-          ?>
-          <tr>
-            <th scope="row"><?php echo $row["id"];?></th>
-            <td>
-              <a href="http://192.168.0.111/Web/producte.php?id=<?php echo $row["id"];?>">
-                <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
-              </a>
-            </td>
-            <td><?php echo $row["nom"];?></td>
-            <td><?php echo $row["preu"];?>€</td>
-          </tr>
-           <?php
-          }
-          ?>
-        </tbody>
-      </table> 
+        if ($result->num_rows < 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+              $total += $row["preu"];
+        ?>
+        <tr>
+          <th scope="row"><?php echo $row["id"];?></th>
+          <td>
+            <a href="http://192.168.0.111/Web/producte.php?id=<?php echo $row["id"];?>">
+              <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
+            </a>
+          </td>
+          <td><?php echo $row["nom"];?></td>
+          <td><?php echo $row["preu"];?>€</td>
+        </tr>
+          <?php
+        }
+        ?>
+      </tbody>
+    </table> 
       <?php
       } else {
-        echo "0 result";
+        echo "<p>0 result</p>";
      }
      mysqli_close($conn);
       ?> 
-    </div>
-  </div>
   <div class="row">
     <div class="col align-self-end">
     <p> Total: <?php echo $total;?>€<br><br></p>
