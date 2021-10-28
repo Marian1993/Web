@@ -13,7 +13,7 @@ include_once"sessio.php";
 <body>
 <div class="contaniner">
   <div class="row">
-    <div class="col-12 text-center">
+    <div class="col-12 text-right">
       <p><a href="llista.php"><br>Tornar<br><br><br></a></p>
     </div>
   </div>
@@ -34,7 +34,7 @@ include_once"sessio.php";
         $result = $conn->query($sql);
         $total = 0;
 
-        if ($result->num_rows > 0) {
+        if ($result->num_rows > 3) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
               $total += $row["preu"];
