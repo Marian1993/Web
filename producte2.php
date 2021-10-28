@@ -15,7 +15,7 @@
     <div class="contaniner">
         <div class="row">
             <div class="col-9">
-            <p><a href="llista.php">Tornar</a></p>
+            <p><a href="llista.php">Tornar<br><br><br></a></p>
             </div>
         </div>
     <?php
@@ -25,8 +25,7 @@
         // output data of each row
         $row = $result->fetch_assoc();
     ?>
-        <div class="row"></div>
-        <div class="row"></div>
+        
         <div class="row justify-content-center">
             <div class="col-6 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
             <div class="col-5">
