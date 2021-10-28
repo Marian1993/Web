@@ -22,7 +22,7 @@
         while($row = $result->fetch_assoc()) {
     ?>
         <div class="col">
-            <div class="p-3 border bg-light text-center">
+            <div class="p-3 text-center">
                 <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
                 <p ><?php echo $row["nom"];?></p>
                 <p></p>
