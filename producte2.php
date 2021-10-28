@@ -14,7 +14,7 @@
 <body>
     <div class="contaniner">
         <div class="row">
-            <div class="col-9">
+            <div class="col-2 text-center">
             <p><a href="llista.php">Tornar<br><br><br></a></p>
             </div>
         </div>
@@ -27,11 +27,11 @@
     ?>
         
         <div class="row justify-content-center">
-            <div class="col-6 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
-            <div class="col-5">
+            <div class="col-8 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
+            <div class="col-4 text-center">
                 <h1><?php echo $row["nom"];?></h1>
                 <h4><?php echo $row["tipusCarn"];?></h4>
-                <p><?php echo $row["preu"];?>€</p>
+                <p><?php echo $row["preu"];?>€<br><br></p>
                 <button type="button" class="btn btn-info ">Afegir al carreto</button>        
             </div>
         </div>
