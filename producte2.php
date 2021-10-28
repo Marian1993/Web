@@ -25,12 +25,14 @@
         // output data of each row
         $row = $result->fetch_assoc();
     ?>
-        <div class="col-6"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
-        <div class="col-5">
-            <h1><?php echo $row["nom"];?></h1>
-            <h4><?php echo $row["tipusCarn"];?></h4>
-            <p><?php echo $row["preu"];?>€</p>
-            <button>Afegir al carreto</button>        
+        <div class="row justify-content-center">
+            <div class="col-6 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
+            <div class="col-5">
+                <h1><?php echo $row["nom"];?></h1>
+                <h4><?php echo $row["tipusCarn"];?></h4>
+                <p><?php echo $row["preu"];?>€</p>
+                <button>Afegir al carreto</button>        
+            </div>
         </div>
     </div>
     <?php
