@@ -13,6 +13,7 @@
 <body>
 <div class="container">
     <h2 class="text-center">Llista de d'hamburgueses</h2>
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
     <?php
     $sql = "SELECT id, nom FROM Hamburguesa;";
     $result = $conn->query($sql);
@@ -20,15 +21,13 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
     ?>
-    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         <div class="col">
             <div class="p-3 border bg-light">
                 <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
                 <p><?php echo $row["nom"];?></p>
                 <p></p>
             </div>
-        </div>
-    </div>
+        </div>   
     <?php
     }
         } else {
@@ -36,6 +35,7 @@
     } 
     mysqli_close($conn);
     ?>
+    </div>
 </div>
 </body>
 </html>
