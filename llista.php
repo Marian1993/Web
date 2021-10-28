@@ -14,8 +14,8 @@
 <div class="container">
 <h2 class="text-center"><br>Llista de d'hamburgueses<br><br></h2>
     <div class="row justify-content-end">
-        <div class="col-12">
-        <p><a href="carreto.php">Anar al<br><br></a></p>
+        <div class="col-12 text-right">
+        <p text-align="right"><a href="carreto.php">Anar al carreto<br><br></a></p>
         </div>
     </div>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
