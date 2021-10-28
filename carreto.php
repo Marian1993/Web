@@ -67,7 +67,6 @@ include_once"sessio.php";
     <p> Total: <?php echo $total;?>€<br><br></p>
     </div>
   </div>
-  </div>
 </div>
 </body>
 </html> 
