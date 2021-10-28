@@ -14,7 +14,7 @@
 <body>
     <div class="contaniner">
         <div class="row">
-            <div class="col-2 text-center">
+            <div class="col-1 text-center">
             <p><a href="llista.php">Tornar<br><br><br></a></p>
             </div>
         </div>
@@ -28,7 +28,7 @@
         
         <div class="row justify-content-center">
             <div class="col-8 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
-            <div class="col-4 text-center">
+            <div class="col-4">
                 <h1><?php echo $row["nom"];?></h1>
                 <h4><?php echo $row["tipusCarn"];?></h4>
                 <p><?php echo $row["preu"];?>€<br><br></p>
