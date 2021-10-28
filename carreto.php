@@ -16,10 +16,10 @@ include_once"sessio.php";
     <div class="col-12 text-center">
       <p><a href="llista.php"><br>Tornar<br><br><br></a></p>
     </div>
-  </div> 
+  </div>
   <div class="row">
     <div class="col-12">
-    <table class="table">
+      <table class="table">
       <thead>
         <tr>
           <th scope="col">N Producto</th>
@@ -34,7 +34,7 @@ include_once"sessio.php";
         $result = $conn->query($sql);
         $total = 0;
 
-        if ($result->num_rows < 0) {
+        if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
               $total += $row["preu"];
