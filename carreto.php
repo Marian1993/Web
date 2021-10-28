@@ -46,7 +46,7 @@ include_once"sessio.php";
           <th scope="row"><?php echo $row["id"];?></th>
           <td>
             <a href="http://192.168.0.111/Web/producte.php?id=<?php echo $row["id"];?>">
-              <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
+              <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="75px" width="125px">
             </a>
           </td>
           <td><?php echo $row["nom"];?></td>
