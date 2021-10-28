@@ -30,7 +30,7 @@ include_once"sessio.php";
         </thead>
         <tbody>
         <?php
-          $sql = "SELECT id, nom FROM Hamburguesa;";
+          $sql = "SELECT id, nom, preu FROM Hamburguesa;";
           $result = $conn->query($sql);
           $total = 0;
 
@@ -40,7 +40,7 @@ include_once"sessio.php";
                 $total += $row["preu"];
           ?>
           <tr>
-            <th scope="row">1</th>
+            <th scope="row"><?php echo $row["id"];?></th>
             <td>
               <a href="http://192.168.0.111/Web/producte.php?id=<?php echo $row["id"];?>">
                 <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
