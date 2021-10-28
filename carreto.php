@@ -13,10 +13,12 @@ include_once"sessio.php";
 <body>
 <div class="contaniner">
   <div class="row">
-    <div class="col-1 text-center">
+    <div class="col-12 text-center">
       <p><a href="llista.php"><br>Tornar<br><br><br></a></p>
     </div>
-  </div>
+  </div> 
+  <div class="row">
+    <div class="col-12">
     <table class="table">
       <thead>
         <tr>
@@ -58,8 +60,6 @@ include_once"sessio.php";
      }
      mysqli_close($conn);
       ?> 
-  <div class="row">
-    <div class="col align-self-end">
     <p> Total: <?php echo $total;?>€<br><br></p>
     </div>
   </div>
