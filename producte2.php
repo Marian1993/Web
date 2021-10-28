@@ -1,17 +1,5 @@
 <?php
   include_once"sessio.php";
-
-    $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        // output data of each row
-        $row = $result->fetch_assoc();
-          echo "<img src=\" ./Img/" . $row["id"].".jpg\" height=\"150\" width=\"200\"> <br>";
-          echo "Nom: " . $row["nom"]. "<br>". "Tipus de carn: " . $row["tipusCarn"].
-           "<br>". "Preu: " . $row["preu"]. "<br>";
-      } else {
-        echo "No hi ha tantes hamburgueses";
-     }
     
 ?>
 <!DOCTYPE html>
@@ -38,7 +26,7 @@
         $row = $result->fetch_assoc();
     ?>
         <div class="col-6 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
-        <div class="col-4">
+        <div class="col-5">
             <h1><?php echo $row["nom"];?></h1>
             <h4><?php echo $row["tipusCarn"];?></h4>
             <p><?php echo $row["preu"];?>€</p>
