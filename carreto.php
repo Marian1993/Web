@@ -49,11 +49,11 @@ include_once"sessio.php";
             <td><?php echo $row["nom"];?></td>
             <td><?php echo $row["preu"];?>€</td>
           </tr>
-          <?php
+           <?php
           }
               } else {
-              echo "0 results";
-          } 
+             echo "<p>0 results</p>";
+          }
           mysqli_close($conn);
           ?>
         </tbody>
