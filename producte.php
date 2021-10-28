@@ -29,9 +29,9 @@
         <div class="row justify-content-center">
             <div class="col-8 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
             <div class="col-4">
-                <h1><?php echo $row["nom"];?></h1>
-                <p> Tipus de carn -> <?php echo $row["tipusCarn"];?></p>
-                <p> Preu -> <?php echo $row["preu"];?>€<br><br></p>
+                <h1><?php echo $row["nom"];?><br></h1>
+                <p>   Tipus de carn -> <?php echo $row["tipusCarn"];?></p>
+                <p>   Preu -> <?php echo $row["preu"];?>€<br><br></p>
                 <button type="button" class="btn btn-info ">Afegir al carreto</button>        
             </div>
         </div>

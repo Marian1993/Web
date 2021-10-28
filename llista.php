@@ -13,6 +13,11 @@
 <body>
 <div class="container">
 <h2 class="text-center"><br>Llista de d'hamburgueses<br><br></h2>
+    <div class="row">
+        <div class="col-12 text-right">
+        <p><a href="carreto.php"><br>Tornar<br><br><br></a></p>
+        </div>
+    </div>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
     <?php
     $sql = "SELECT id, nom FROM Hamburguesa;";
