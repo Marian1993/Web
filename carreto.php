@@ -13,7 +13,7 @@ include_once"sessio.php";
 <body>
 <div class="contaniner">
   <div class="row">
-    <div class="col-1 text-right">
+    <div class="col-1">
       <p><a href="llista.php"><br>Tornar<br><br><br></a></p>
     </div>
   </div>
@@ -33,14 +33,11 @@ include_once"sessio.php";
         $sql = "SELECT id, nom, preu FROM Hamburguesa LIMIT 2;";
         $result = $conn->query($sql);
         $total = 0;
-        $contador = 0;
-        
-
+      
         if ($result->num_rows > 0) {
 
             while($row = $result->fetch_assoc()) {
               $total += $row["preu"];
-              $contador++;
         ?>
         <tr>
           <th scope="row"><?php echo $row["id"];?></th>
