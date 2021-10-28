@@ -13,7 +13,7 @@ include_once"sessio.php";
 <body>
 <div class="contaniner">
   <div class="row">
-    <div class="col-12 text-right">
+    <div class="col-1 text-right">
       <p><a href="llista.php"><br>Tornar<br><br><br></a></p>
     </div>
   </div>
