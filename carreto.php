@@ -51,13 +51,15 @@ include_once"sessio.php";
           </tr>
            <?php
           }
-              } else {
-             echo "<p>reultT+DS</p>";
-          }
-          mysqli_close($conn);
           ?>
         </tbody>
-      </table>  
+      </table> 
+      <?php
+      } else {
+        echo "0 result";
+     }
+     mysqli_close($conn);
+      ?> 
     </div>
   </div>
   <div class="row">
