@@ -22,7 +22,7 @@
     $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        // output data of each row
+
         $row = $result->fetch_assoc();
     ?>
         

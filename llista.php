@@ -23,7 +23,7 @@
     $sql = "SELECT id, nom FROM Hamburguesa;";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        // output data of each row
+
         while($row = $result->fetch_assoc()) {
     ?>
         <div class="col">
