@@ -14,7 +14,7 @@
 <div class="container">
 <h2 class="text-center"><br>Llista de d'hamburgueses<br><br></h2>
     <div class="row">
-        <div class="col align-self-end">
+        <div class="col-12 align-self-end">
         <p><a href="carreto.php">Anar al carreto<br><br></a></p>
         </div>
     </div>
