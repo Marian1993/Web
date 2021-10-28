@@ -33,11 +33,15 @@ include_once"sessio.php";
         $sql = "SELECT id, nom, preu FROM Hamburguesa;";
         $result = $conn->query($sql);
         $total = 0;
+        $contador = 0;
+        
 
-        if ($result->num_rows < 2) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-              $total += $row["preu"];
+        if ($result->num_rows > 0) {
+          // output data of each row
+          while($row = $result->fetch_assoc()) {
+            $total += $row["preu"];
+            $contador++;
+            if($contador < 2){
         ?>
         <tr>
           <th scope="row"><?php echo $row["id"];?></th>
@@ -50,6 +54,7 @@ include_once"sessio.php";
           <td><?php echo $row["preu"];?>€</td>
         </tr>
           <?php
+          }
         }
         ?>
       </tbody>
