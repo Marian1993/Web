@@ -52,7 +52,7 @@ include_once"sessio.php";
            <?php
           }
               } else {
-             echo "<p>0 results</p>";
+             echo "<p>reultT+DS</p>";
           }
           mysqli_close($conn);
           ?>
