@@ -30,8 +30,8 @@
             <div class="col-8 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
             <div class="col-4">
                 <h1><?php echo $row["nom"];?></h1>
-                <h4><?php echo $row["tipusCarn"];?></h4>
-                <p><?php echo $row["preu"];?>€<br><br></p>
+                <p> Tipus de carn -> <?php echo $row["tipusCarn"];?></p>
+                <p> Preu -> <?php echo $row["preu"];?>€<br><br></p>
                 <button type="button" class="btn btn-info ">Afegir al carreto</button>        
             </div>
         </div>

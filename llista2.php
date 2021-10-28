@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="text-center">Llista de d'hamburgueses</h2>
+<h2 class="text-center"><br>Llista de d'hamburgueses<br><br></h2>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
     <?php
     $sql = "SELECT id, nom FROM Hamburguesa;";
@@ -23,7 +23,9 @@
     ?>
         <div class="col">
             <div class="p-3 text-center">
-                <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
+                <a href="http://192.168.0.111/Web/producte2.php?id=<?php echo $row["id"];?>">
+                    <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
+                </a>
                 <p ><?php echo $row["nom"];?></p>
                 <p></p>
             </div>
