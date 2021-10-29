@@ -10,7 +10,6 @@ else {
     $_SESSION[ 'contador' ] = 1;
     $mensaje = 'Bienvenido por primera vez a nuesta web';
 }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
