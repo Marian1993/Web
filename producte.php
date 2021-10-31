@@ -15,7 +15,7 @@
     <div class="contaniner">
         <div class="row">
             <div class="col-1 text-center">
-            <p><a href="llista.php"><br><?php echo $row["volver"];?><br><br><br></a></p>
+            <p><a href="llista.php"><br><?php echo $lang["volver"];?><br><br><br></a></p>
             </div>
         </div>
     <?php
