@@ -1,22 +1,19 @@
 <?php
   include_once"sessio.php";
-  session_start();
-  //verificamos si hay cambios de lenguaje mediante POST
-if(isset($_POST["lang"])){
-    $lang = $_POST["lang"];
-    if(!empty($lang)){
-      $_SESSION["lang"] = $lang;
-    }
-  }
-  // verificamos la sesion creada
-  if(isset($_SESSION['lang'])){
-    // si es true, se crea el require y la variable lang
-    $lang = $_SESSION["lang"];
-    require $lang.".php";
-    // si no hay sesion por default se carga el lenguaje espanol
-  }else{
-    require "es.php";
-  }
+  $idiomaActual = 'es'; 
+  // Si se ha seleccionado un idioma se guarda 
+  // una cookie con el idioma 
+  if(isset($_GET['idioma'])){ 
+    setcookie ("idioma", $_GET['idioma'], time () + 3600*24); 
+    $idiomaActual = $_GET['idioma']; 
+  } 
+  elseif(isset($_COOKIE['idioma'])){ 
+  // Miri que exista el archivo del idioma 
+    if(file_exists("lang/".$_COOKIE['idioma'].".php")){ 
+      $idiomaActual = $_COOKIE['idioma']; 
+    } 
+  } //incluye la carpeta (lang) donde estan los file php en y es etc.
+  include($_SERVER['DOCUMENT_ROOT']."lang/".$idiomaActual.".php"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,9 +27,10 @@ if(isset($_POST["lang"])){
 <body>
 <header>
     <nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand"><?php echo $lang["logo"]; ?></a>
   <form class="form-inline" method="POST">
   <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
-  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang">
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang" onChange="document.location = '<?php echo $_SERVER['PHP_SELF'];?>?idioma=' + this.value">
     <option selected><?php echo $lang["opcion_1"]; ?></option>
     <option value="es"><?php echo $lang["opcion_2"]; ?></option>
     <option value="en"><?php echo $lang["opcion_3"]; ?></option>
@@ -48,11 +46,9 @@ if(isset($_POST["lang"])){
         </div>
     </div>
 
-
-
     <div class="row justify-content-end">
         <div class="col-12 text-right">
-        <p text-align="right"><a href="carreto.php">Ir al carrito<br><br></a></p>
+        <p text-align="right"><a href="carreto.php">Anar al carreto<br><br></a></p>
         </div>
     </div>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
