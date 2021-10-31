@@ -1,19 +1,19 @@
 <?php
   include_once"sessio.php";
-  $idiomaActual = 'es'; 
+  $lang = 'es'; 
   // Si se ha seleccionado un idioma se guarda 
   // una cookie con el idioma 
   if(isset($_GET['idioma'])){ 
     setcookie ("idioma", $_GET['idioma'], time () + 3600*24); 
-    $idiomaActual = $_GET['idioma']; 
+    $lang = $_GET['idioma']; 
   } 
   elseif(isset($_COOKIE['idioma'])){ 
   // Miri que exista el archivo del idioma 
     if(file_exists("lang/".$_COOKIE['idioma'].".php")){ 
-      $idiomaActual = $_COOKIE['idioma']; 
+      $lang = $_COOKIE['idioma']; 
     } 
-  } //incluye la carpeta (lang) donde estan los file php en y es etc.
-  include($_SERVER['DOCUMENT_ROOT']."lang/".$idiomaActual.".php"); 
+  } 
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
