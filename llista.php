@@ -15,6 +15,7 @@
       echo $_COOKIE['idioma'];
     } 
   } 
+  include("lang/".$lang.".php"); 
  
 ?>
 <!DOCTYPE html>
