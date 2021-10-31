@@ -12,22 +12,11 @@ if(isset($_POST["lang"])){
   if(isset($_SESSION['lang'])){
     // si es true, se crea el require y la variable lang
     $lang = $_SESSION["lang"];
-    require "lang/".$lang.".php";
+    require $lang.".php";
     // si no hay sesion por default se carga el lenguaje espanol
   }else{
-    require "lang/es.php";
+    require "es.php";
   }
-  $lang = array(
-    "titulo" => "Multilingual system",
-    "logo" => "Multilingual system",
-    "cambiar_idioma" => "Language",
-    "cambiar" => "Change",
-    "opcion_1" => "Select",
-    "opcion_2" => "Spanish",
-    "opcion_3" => "English",
-    "descripcion" => "Hello, this is a title in Spanish",
-  );
-  
 ?>
 <!DOCTYPE html>
 <html lang="en">
