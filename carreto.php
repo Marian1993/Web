@@ -1,5 +1,6 @@
 <?php
 include_once"sessio.php";
+include("lang/".$_COOKIE['idioma'].".php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,10 +23,10 @@ include_once"sessio.php";
       <table class="table">
       <thead>
         <tr>
-          <th scope="col">N Producto</th>
-          <th scope="col">Imagen</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Precio</th>
+          <th scope="col"><?php echo $lang["opcion_2"];?></th>
+          <th scope="col"><?php echo $lang["opcion_2"];?></th>
+          <th scope="col"><?php echo $lang["opcion_2"];?></th>
+          <th scope="col"><?php echo $lang["precio"];?></th>
         </tr>
       </thead>
       <tbody>
@@ -60,7 +61,7 @@ include_once"sessio.php";
      }
      mysqli_close($conn);
       ?> 
-    <p> Total: <?php echo $total;?>€<br><br></p>
+    <p><?php echo $lang["opcion_2"] $total;?>€<br><br></p>
     </div>
   </div>
 </div>

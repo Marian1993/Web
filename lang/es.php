@@ -11,9 +11,9 @@ $lang = array(
   "precio" => "Precio -> ",
   "tipo" => "Tipo de carne ->",
   "no" => "No hay tantas hamburguesas",
-  "" => "",
-  "" => "",
-  "" => "",
-  "" => "",
+  "producto" => "Nº Producto",
+  "nombre" => "Nombre",
+  "imagen" => "Imagen",
+  "total" => "Total: ",
 );
 ?>
