@@ -30,7 +30,7 @@
     <form class="form-inline" method="GET">
         <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="idioma" >
-            <option selected><?php echo $lang["opcion_1"]; ?></option>
+            <option selected><?php echo $lang?></option>
             <option value="es"><?php echo $lang["opcion_2"];?></option>
             <option value="cat"><?php echo $lang["opcion_3"];?></option>
         </select>
@@ -41,13 +41,13 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2 class="text-center"><br><?php echo $lang["titulo"]; ?><br><br></h2>
+            <h2 class="text-center"><br><?php echo $lang["titulo"];?><br><br></h2>
         </div>
     </div>
 
     <div class="row justify-content-end">
         <div class="col-12 text-right">
-        <p text-align="right"><a href="carreto.php">Anar al carreto<br><br></a></p>
+        <p text-align="right"><a href="carreto.php"><?php echo $lang["carrito"];?><br><br></a></p>
         </div>
     </div>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
