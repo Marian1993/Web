@@ -7,6 +7,13 @@ $lang = array(
     "opcion_1" => "Seleccionar",
     "opcion_2" => "Castallà",
     "opcion_3" => "Català",
-    "descripcion" => "Hello, this is a title in Spanish",
+    "añadir" => "afegir al carreto",
+    "precio" => "Preu -> ",
+    "tipo" => "Tipus de carn ->",
+    "no" => "No hi ha tantes hamburgueses",
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
   );
 ?>
