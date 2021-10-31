@@ -1,6 +1,6 @@
 <?php
 $lang = array(
-  "titulo" => "Lista de hambuirguesas",
+  "titulo" => "Lista de hamburguesas",
   "carrito" => "Ir al carrito",
   "cambiar_idioma" => "Idioma",
   "cambiar" => "Cambiar",

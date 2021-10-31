@@ -14,7 +14,6 @@
     } 
   } 
   include("lang/".$lang.".php"); 
- 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,6 +72,17 @@
         } else {
         echo "0 results";
     } 
+    if(isset($_GET['idioma'])){ 
+        setcookie ("idioma", $_GET['idioma'], time () + 3600*24); 
+        $lang = $_GET['idioma']; 
+      } 
+      elseif(isset($_COOKIE['idioma'])){ 
+      // Miri que exista el archivo del idioma 
+        if(file_exists("lang/".$_COOKIE['idioma'].".php")){ 
+          $lang = $_COOKIE['idioma']; 
+        } 
+      } 
+      include("lang/".$lang.".php"); 
     mysqli_close($conn);
     ?>
     </div>
