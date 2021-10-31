@@ -14,7 +14,6 @@
     } 
   } 
   include("lang/".$lang.".php");
-  $aux = $lang;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +30,7 @@
     <form class="form-inline" method="GET">
         <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="idioma" >
-            <option selected><?php echo $aux?></option>
+            <option ><?php echo $_COOKIE['idioma']?></option>
             <option value="es"><?php echo $lang["opcion_2"];?></option>
             <option value="cat"><?php echo $lang["opcion_3"];?></option>
         </select>
