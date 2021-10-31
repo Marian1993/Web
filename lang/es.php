@@ -15,6 +15,7 @@ $lang = array(
   "nombre" => "Nombre",
   "imagen" => "Imagen",
   "total" => "Total: ",
-  "precio2" => "Precio ",
+  "precio2" => "Precio",
+  "volver" => "Volver",
 );
 ?>
