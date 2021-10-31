@@ -1,5 +1,23 @@
 <?php
   include_once"sessio.php";
+  session_start();
+  //verificamos si hay cambios de lenguaje mediante POST
+if(isset($_POST["lang"])){
+    $lang = $_POST["lang"];
+    if(!empty($lang)){
+      $_SESSION["lang"] = $lang;
+    }
+  }
+  // verificamos la sesion creada
+  if(isset($_SESSION['lang'])){
+    // si es true, se crea el require y la variable lang
+    $lang = $_SESSION["lang"];
+    require "lang/".$lang.".php";
+    // si no hay sesion por default se carga el lenguaje espanol
+  }else{
+    require "lang/es.php";
+  }
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +29,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand"><?php echo $lang["logo"]; ?></a>
+  <form class="form-inline" method="POST">
+  <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang">
+    <option selected><?php echo $lang["opcion_1"]; ?></option>
+    <option value="es"><?php echo $lang["opcion_2"]; ?></option>
+    <option value="en"><?php echo $lang["opcion_3"]; ?></option>
+  </select>
+  <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
+</form>
+</nav>
+  </header>
 <div class="container">
-<h2 class="text-center"><br>Llista de d'hamburgueses<br><br></h2>
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-center"><br>Llista de d'hamburgueses<br><br></h2>
+        </div>
+    </div>
+
     <div class="row justify-content-end">
         <div class="col-12 text-right">
         <p text-align="right"><a href="carreto.php">Anar al carreto<br><br></a></p>
