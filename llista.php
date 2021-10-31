@@ -28,13 +28,15 @@
 <body>
 <header>
     <nav class="navbar navbar-light bg-light justify-content-between">
-  <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
-  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang" onChange="document.location = idioma + this.value">
-    <option selected><?php echo $lang["opcion_1"]; ?></option>
-    <option value="es"><?php echo $lang["opcion_2"];?></option>
-    <option value="cat"><?php echo $lang["opcion_3"];?></option>
-  </select>
-  <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
+    <form class="form-inline" method="GET">
+        <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang" onChange="document.location = idioma + this.value">
+            <option selected><?php echo $lang["opcion_1"]; ?></option>
+            <option value="es"><?php echo $lang["opcion_2"];?></option>
+            <option value="cat"><?php echo $lang["opcion_3"];?></option>
+        </select>
+        <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
+</form>
 </nav>
   </header>
 <div class="container">
