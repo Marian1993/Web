@@ -6,13 +6,11 @@
   if(isset($_GET['idioma'])){ 
     setcookie ("idioma", $_GET['idioma'], time () + 3600*24); 
     $lang = $_GET['idioma']; 
-    echo $_GET['idioma'];
   } 
   elseif(isset($_COOKIE['idioma'])){ 
   // Miri que exista el archivo del idioma 
     if(file_exists("lang/".$_COOKIE['idioma'].".php")){ 
       $lang = $_COOKIE['idioma']; 
-      echo $_COOKIE['idioma'];
     } 
   } 
   include("lang/".$lang.".php"); 
