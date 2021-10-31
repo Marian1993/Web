@@ -23,9 +23,9 @@ include("lang/".$_COOKIE['idioma'].".php");
       <table class="table">
       <thead>
         <tr>
-          <th scope="col"><?php echo $lang["opcion_2"];?></th>
-          <th scope="col"><?php echo $lang["opcion_2"];?></th>
-          <th scope="col"><?php echo $lang["opcion_2"];?></th>
+          <th scope="col"><?php echo $lang["producto"];?></th>
+          <th scope="col"><?php echo $lang["imagen"];?></th>
+          <th scope="col"><?php echo $lang["nombre"];?></th>
           <th scope="col"><?php echo $lang["precio"];?></th>
         </tr>
       </thead>
@@ -61,7 +61,7 @@ include("lang/".$_COOKIE['idioma'].".php");
      }
      mysqli_close($conn);
       ?> 
-    <p><?php echo $lang["opcion_2"] $total;?>€<br><br></p>
+    <p><?php echo $lang["total"];?><?php echo $total;?>€<br><br></p>
     </div>
   </div>
 </div>
