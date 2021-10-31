@@ -1,6 +1,5 @@
 <?php
   include_once"sessio.php";
-  include("llista.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
