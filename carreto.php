@@ -15,7 +15,7 @@ include("lang/".$_COOKIE['idioma'].".php");
 <div class="contaniner">
   <div class="row">
     <div class="col-1">
-      <p><a href="llista.php"><br><?php echo $row["volver"];?><br><br><br></a></p>
+      <p><a href="llista.php"><br><?php echo $lang["volver"];?><br><br><br></a></p>
     </div>
   </div>
   <div class="row">
