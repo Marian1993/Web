@@ -31,8 +31,8 @@
         <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="idioma" >
             <option selected><?php echo $lang["opcion_1"]; ?></option>
-            <option value="es"><?php echo $lang["opcion_2"]; $_GET['idioma'] = 'es';?></option>
-            <option value="cat"><?php echo $lang["opcion_3"]; $_GET['idioma'] = 'cat';?></option>
+            <option value="es"><?php echo $lang["opcion_2"];?></option>
+            <option value="cat"><?php echo $lang["opcion_3"];?></option>
         </select>
         <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
 </form>
