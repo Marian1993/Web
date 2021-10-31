@@ -1,6 +1,6 @@
 <?php
   include_once"sessio.php";
-  $lang = 'es'; 
+  $lang = 'cat'; 
   // Si se ha seleccionado un idioma se guarda 
   // una cookie con el idioma 
   if(isset($_GET['idioma'])){ 
@@ -72,17 +72,6 @@
         } else {
         echo "0 results";
     } 
-    if(isset($_GET['idioma'])){ 
-        setcookie ("idioma", $_GET['idioma'], time () + 3600*24); 
-        $lang = $_GET['idioma']; 
-      } 
-      elseif(isset($_COOKIE['idioma'])){ 
-      // Miri que exista el archivo del idioma 
-        if(file_exists("lang/".$_COOKIE['idioma'].".php")){ 
-          $lang = $_COOKIE['idioma']; 
-        } 
-      } 
-      include("lang/".$lang.".php"); 
     mysqli_close($conn);
     ?>
     </div>
