@@ -1,5 +1,6 @@
 <?php
   include_once"sessio.php";
+  include("lang/".$lang.".php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
