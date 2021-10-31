@@ -9,6 +9,4 @@ $lang = array(
   "opcion_3" => "Catalan",
   "descripcion" => "Hello, this is a title in Spanish",
 );
-DEFINE('actual',' Idioma Autual: Es');
-$mas_op= '????? ES';
 ?>

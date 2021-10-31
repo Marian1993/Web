@@ -13,6 +13,7 @@
       $lang = $_COOKIE['idioma']; 
     } 
   } 
+  include($_SERVER['DOCUMENT_ROOT']."lang/".$lang.".php");
  
 ?>
 <!DOCTYPE html>
@@ -27,8 +28,6 @@
 <body>
 <header>
     <nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand"><?php echo $lang["logo"]; ?></a>
-  <form class="form-inline" method="POST">
   <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang" onChange="document.location = '<?php echo $_SERVER['PHP_SELF'];?>?idioma=' + this.value">
     <option selected><?php echo $lang["opcion_1"]; ?></option>
@@ -36,7 +35,6 @@
     <option value="en"><?php echo $lang["opcion_3"]; ?></option>
   </select>
   <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
-</form>
 </nav>
   </header>
 <div class="container">
