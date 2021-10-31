@@ -1,12 +1,12 @@
 <?php
 $lang = array(
-    "titulo" => "Multilingual system",
-    "logo" => "Multilingual system",
-    "cambiar_idioma" => "Language",
-    "cambiar" => "Change",
-    "opcion_1" => "Select",
-    "opcion_2" => "Spanish",
-    "opcion_3" => "English",
+    "titulo" => "Lista de hambuirguesas",
+    "carrito" => "Ir al carrito",
+    "cambiar_idioma" => "Idioma",
+    "cambiar" => "Cambiar",
+    "opcion_1" => "Selecionar",
+    "opcion_2" => "Castellano",
+    "opcion_3" => "Catalan",
     "descripcion" => "Hello, this is a title in Spanish",
   );
 ?>
