@@ -5,12 +5,12 @@
   // una cookie con el idioma 
   if(isset($_GET['idioma'])){ 
     setcookie ("idioma", $_GET['idioma'], time () + 3600*24); 
-    $lang = $_GET['idioma']; 
+    $_GET['idioma'] = $lang; 
   } 
   elseif(isset($_COOKIE['idioma'])){ 
   // Miri que exista el archivo del idioma 
     if(file_exists("lang/".$_COOKIE['idioma'].".php")){ 
-      $lang = $_COOKIE['idioma']; 
+      $_COOKIE['idioma'] = $lang; 
     } 
   } 
  
@@ -28,10 +28,10 @@
 <header>
     <nav class="navbar navbar-light bg-light justify-content-between">
   <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
-  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang" onChange="document.location = idioma + this.value">
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang">
     <option selected><?php echo $lang["opcion_1"]; ?></option>
     <option value="es"><?php echo $lang["opcion_2"];?></option>
-    <option value="en"><?php echo $lang["opcion_3"];?></option>
+    <option value="cat"><?php echo $lang["opcion_3"];?></option>
   </select>
   <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
 </nav>
