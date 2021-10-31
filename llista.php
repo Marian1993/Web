@@ -9,7 +9,7 @@
   } 
   elseif(isset($_COOKIE['idioma'])){ 
   // Miri que exista el archivo del idioma 
-    if(file_exists("lang/es.php")){ 
+    if(file_exists("lang/".$_COOKIE['idioma'].".php")){ 
       $lang = $_COOKIE['idioma']; 
     } 
   } 
@@ -28,7 +28,7 @@
 <header>
     <nav class="navbar navbar-light bg-light justify-content-between">
   <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
-  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang">
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="lang" onChange="document.location = idioma + this.value">
     <option selected><?php echo $lang["opcion_1"]; ?></option>
     <option value="es"><?php echo $lang["opcion_2"];?></option>
     <option value="en"><?php echo $lang["opcion_3"];?></option>
