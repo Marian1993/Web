@@ -26,7 +26,7 @@ include("lang/".$_COOKIE['idioma'].".php");
           <th scope="col"><?php echo $lang["producto"];?></th>
           <th scope="col"><?php echo $lang["imagen"];?></th>
           <th scope="col"><?php echo $lang["nombre"];?></th>
-          <th scope="col"><?php echo $lang["precio"];?></th>
+          <th scope="col"><?php echo $lang["precio2"];?></th>
         </tr>
       </thead>
       <tbody>
