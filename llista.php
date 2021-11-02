@@ -2,7 +2,6 @@
   include_once"sessio.php";
 
   if(isset($_GET['idioma'])){ 
-    setcookie ("idioma", $_GET['idioma'], 0, 2), time () + 3600*24);
     $lang = $_GET['idioma']; 
   } 
   elseif(isset($_COOKIE['idioma'])){ 
