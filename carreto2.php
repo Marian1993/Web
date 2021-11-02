@@ -60,9 +60,6 @@ include("lang/".$_COOKIE['idioma'].".php");
       </tbody>
     </table> 
       <?php
-      } else {
-        echo "0 result";
-     }
      mysqli_close($conn);
       ?> 
     <p><?php echo $lang["total"];?><?php echo $total;?>€<br><br></p>
