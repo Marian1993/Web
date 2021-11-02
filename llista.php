@@ -29,6 +29,7 @@
 <body>
     <header>
         <nav class="navbar navbar-light bg-light justify-content-between">
+        <form class="form-inline" method="GET">
             <label class="mr-sm-2" for="inlineFormCustomSelectPref"><?php echo $lang["cambiar_idioma"]; ?></label>
             <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="idioma" >
                 <option ></option>
@@ -36,7 +37,8 @@
                 <option value="ca"><?php echo $lang["opcion_3"];?></option>
             </select>
             <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
-        </nav>
+        </form>
+    </nav>
     </header>
 <div class="container">
     <div class="row">
