@@ -35,7 +35,7 @@
             <form>
                 <input type="hidden" value="<?php echo $row["nom"];?>" name="nombre">
                 <input type="hidden" value="<?php echo $row["preu"];?>€" name="precio">
-                <button type="button" class="btn btn-info" value="agregar" name="bagregar"><?php echo $lang["añadir"];?></button>
+                <input type="submit" class="btn btn-info" value="<?php echo $lang["añadir"];?>" name="bagregar">
             </form>    
         </div>
         </div>
