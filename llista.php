@@ -3,7 +3,6 @@
   // Si se ha seleccionado un idioma se guarda 
   // una cookie con el idioma 
   if(isset($_GET['idioma'])){ 
-    setcookie ("idioma", $_GET['idioma'], time () + 3600*24); 
     $lang = $_GET['idioma']; 
     echo "1111111";
   } 
@@ -14,7 +13,7 @@
     } 
     echo "22222222";
   } else{
-    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    setcookie ("idioma", substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2), time () + 3600*24);
     echo "ho detecta";
   }
   include("lang/".$lang.".php");
