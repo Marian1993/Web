@@ -34,7 +34,7 @@
         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="idioma" >
             <option ></option>
             <option value="es"><?php echo $lang["opcion_2"];?></option>
-            <option value="cat"><?php echo $lang["opcion_3"];?></option>
+            <option value="ca"><?php echo $lang["opcion_3"];?></option>
         </select>
         <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
 </form>
