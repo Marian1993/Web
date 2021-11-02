@@ -57,9 +57,6 @@ include("lang/".$_COOKIE['idioma'].".php");
           <td><?php echo $row["nom"];?></td>
           <td><?php echo $row["preu"];?>€</td>
         </tr>
-          <?php
-        }
-        ?>
       </tbody>
     </table> 
       <?php
