@@ -14,7 +14,7 @@
     echo "22222222";
   } else{
     setcookie ("idioma", substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2), time () + 3600*24);
-    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2)
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
     echo "ho detecta";
   }
   include("lang/".$lang.".php");
