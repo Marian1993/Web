@@ -1,6 +1,5 @@
 <?php
   include_once"sessio.php";
-  $lang = 'es'; 
   // Si se ha seleccionado un idioma se guarda 
   // una cookie con el idioma 
   if(isset($_GET['idioma'])){ 
@@ -15,7 +14,7 @@
     } 
     echo "22222222";
   } else{
-    $_COOKIE['idioma'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
     echo "ho detecta";
   }
   include("lang/".$lang.".php");
