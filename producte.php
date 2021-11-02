@@ -26,19 +26,31 @@
         $row = $result->fetch_assoc();
     ?>
         
-        <div class="row justify-content-center">
-            <div class="col-8 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
-            <div class="col-4">
-                <h1><?php echo $row["nom"];?><br></h1>
-                <p><?php echo $lang["tipo"];?><?php echo $row["tipusCarn"];?></p>
-                <p><?php echo $lang["precio"];?><?php echo $row["preu"];?>€<br><br></p>
-                <button type="button" class="btn btn-info "><?php echo $lang["añadir"];?>/button>        
-            </div>
+    <div class="row justify-content-center">
+        <div class="col-8 text-center"><img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="350px" width="500px"></div>
+        <div class="col-4">
+            <h1><?php echo $row["nom"];?><br></h1>
+            <p><?php echo $lang["tipo"];?><?php echo $row["tipusCarn"];?></p>
+            <p><?php echo $lang["precio"];?><?php echo $row["preu"];?>€<br><br></p>
+            <form>
+                <input type="hidden" value="<?php echo $row["nom"];?>" name="nombre">
+                <input type="hidden" value="<?php echo $row["preu"];?>€" name="precio">
+                <button type="button" class="btn btn-info" value="agregar" name="bagregar"><?php echo $lang["añadir"];?></button>
+            </form>    
+        </div>
         </div>
     </div>
     <?php
     } else {
         echo $lang["no"];
+     }
+
+     if(isset($_REQUEST["bagregar"])){
+         $nombre = $_REQUEST["nombre"];
+         $precio = $_REQUEST["precio"];
+
+         //$_SESSION["carrito"]["producto"]["nom"] = $nombre;
+         $_SESSION["carrito"][$nombre]["pre"] = $precio;
      }
      mysqli_close($conn);
      ?>
