@@ -36,7 +36,7 @@ session_start();
         $result = $conn->query($sql);
         $total = 0;
         echo $_SESSION['carrito'];
-        echo $linia = $carreto[count($carreto)];
+        
       
         if ($result->num_rows > 0) {
 
