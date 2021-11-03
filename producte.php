@@ -1,6 +1,6 @@
 <?php
   include_once"sessio.php";
-  include("lang/".$_GET['idioma'].".php");
+  include("lang/".$_COOKIE['idioma'].".php");
   
 ?>
 <!DOCTYPE html>
