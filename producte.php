@@ -22,9 +22,13 @@
     <?php
     $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
     $result = $conn->query($sql);
+   
+        
     if ($result->num_rows > 0) {
 
+        $_SESSION['carrito'] = $_GET['id'];
         $row = $result->fetch_assoc();
+        echo $_SESSION['carrito'];
     ?>
         
     <div class="row justify-content-center">

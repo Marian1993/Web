@@ -1,6 +1,7 @@
 <?php
 include_once"sessio.php";
 include("lang/".$_COOKIE['idioma'].".php");
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@ include("lang/".$_COOKIE['idioma'].".php");
       </thead>
       <tbody>
       <?php
-         $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
+        $sql = "SELECT id, nom, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
         $result = $conn->query($sql);
         $total = 0;
       
