@@ -32,7 +32,7 @@
             <h1><?php echo $row["nom"];?><br></h1>
             <p><?php echo $lang["tipo"];?><?php echo $row["tipusCarn"];?></p>
             <p><?php echo $lang["precio"];?><?php echo $row["preu"];?>€<br><br></p>
-            <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
+            <button type="submit" class="btn btn-primary"><?php echo $lang["añadir"]; ?></button>
         </div>
         </div>
     </div>
