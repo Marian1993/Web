@@ -57,11 +57,13 @@ include("lang/".$_COOKIE['idioma'].".php");
     </table> 
       <?php
       } else {
-        echo "<p>0 result</p>";
+        echo "0 result";
      }
      mysqli_close($conn);
       ?> 
-    <p><?php echo $lang["total"];?><?php echo $total;?>€<br><br></p>
+    <p><?php echo $lang["total"]; 
+            echo $total;?>€<br><br>
+    </p>
     </div>
   </div>
 </div>

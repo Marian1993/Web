@@ -1,10 +1,6 @@
 <?php
 include_once"sessio.php";
 include("lang/".$_COOKIE['idioma'].".php");
-session_start();
-
-$carreto = $_SESSION["carreto"];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +31,7 @@ $carreto = $_SESSION["carreto"];
       </thead>
       <tbody>
       <?php
-        $sql = "SELECT id, nom, preu FROM Hamburguesa LIMIT 2;";
+         $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
         $result = $conn->query($sql);
         $total = 0;
       
@@ -61,11 +57,13 @@ $carreto = $_SESSION["carreto"];
     </table> 
       <?php
       } else {
-        echo "<p>0 result</p>";
+        echo "0 result";
      }
      mysqli_close($conn);
       ?> 
-    <p><?php echo $lang["total"];?><?php echo $total;?>€<br><br></p>
+    <p><?php echo $lang["total"]; 
+            echo $total;?>€<br><br>
+    </p>
     </div>
   </div>
 </div>
