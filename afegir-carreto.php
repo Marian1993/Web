@@ -5,7 +5,7 @@ if(!isset($_SESSION['carrito'])){
     $_SESSION['carrito'] = array();
 }
 
-$codi = array($_GET['id'])
+$codi = array($_GET['id']);
 array_push($_SESSION['carrito'], $codi);
 
 
