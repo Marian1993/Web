@@ -35,7 +35,7 @@
             <h1><?php echo $row["nom"];?><br></h1>
             <p><?php echo $lang["tipo"];?><?php echo $row["tipusCarn"];?></p>
             <p><?php echo $lang["precio"];?><?php echo $row["preu"];?>€<br><br></p>
-            <button type="submit" class="btn btn-primary"><?php echo $lang["añadir"]; ?><a href="http://192.168.0.111/Web/afegir-carreto.php>"></a></button>
+            <a href="http://192.168.0.111/Web/afegir-carreto.php>"><button type="submit" class="btn btn-primary"><?php echo $lang["añadir"]; ?></button></a>
         </div>
         </div>
     </div>
