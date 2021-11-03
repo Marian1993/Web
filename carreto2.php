@@ -32,7 +32,7 @@ session_start();
       </thead>
       <tbody>
       <?php
-        $sql = "SELECT id, nom, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
+        $sql = "SELECT id, nom, preu FROM Hamburguesa limit 2;";
         $result = $conn->query($sql);
         $total = 0;
       
