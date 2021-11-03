@@ -16,4 +16,5 @@ if ($usuario === $usuario_correcto && $palabra_secreta === $palabra_secreta_corr
 } else {
    
     echo "El usuario o la contraseña son incorrectos";
+    header("Location:autenticacio.php")
 }

@@ -7,8 +7,6 @@ if (empty($_SESSION["usuario"])) {
     header("Location: autenticacio.php");
     exit();
 }
-
-echo "Soy un mensaje secreto";
 ?>
 <!DOCTYPE html>
 <html lang="en">
