@@ -26,7 +26,6 @@
         
     if ($result->num_rows > 0) {
 
-        $_SESSION['carrito'] = $_GET['id'];
         $row = $result->fetch_assoc();
     ?>
         
