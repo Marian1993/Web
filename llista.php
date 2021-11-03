@@ -2,7 +2,8 @@
   include_once"sessio.php";
 
   if(isset($_GET['idioma'])){ 
-    $_COOKIE['idioma'] = $_GET['idioma']; 
+    $_COOKIE['idioma'] = $_GET['idioma'];
+    $lang = $_GET['idioma']; 
   } 
   elseif(isset($_COOKIE['idioma'])){ 
   // Miri que exista el archivo del idioma 
