@@ -110,11 +110,7 @@
                name = "password" required>
             <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
                name = "login">Login</button>
-         </form>
-			
-         Click here to clean <a href = "logout.php" tite = "Logout">Session.
-         
+         </form>  
       </div> 
-      
    </body>
 </html>
