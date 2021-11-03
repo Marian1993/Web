@@ -32,25 +32,13 @@
             <h1><?php echo $row["nom"];?><br></h1>
             <p><?php echo $lang["tipo"];?><?php echo $row["tipusCarn"];?></p>
             <p><?php echo $lang["precio"];?><?php echo $row["preu"];?>€<br><br></p>
-            <form>
-                <input type="hidden" value="<?php echo $row["nom"];?>" name="nombre">
-                <input type="hidden" value="<?php echo $row["preu"];?>€" name="precio">
-                <input type="submit" class="btn btn-info" value="<?php echo $lang["añadir"];?>" name="bagregar">
-            </form>    
+            <button type="submit" class="btn btn-primary"><?php echo $lang["cambiar"]; ?></button>
         </div>
         </div>
     </div>
     <?php
     } else {
         echo $lang["no"];
-     }
-
-     if(isset($_REQUEST["bagregar"])){
-         $nombre = $_REQUEST["nombre"];
-         $precio = $_REQUEST["precio"];
-
-         //$_SESSION["carrito"]["producto"]["nom"] = $nombre;
-         $_SESSION["carrito"][$nombre]["pre"] = $precio;
      }
      mysqli_close($conn);
      ?>
