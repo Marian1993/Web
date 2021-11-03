@@ -35,9 +35,7 @@ session_start();
         $sql = "SELECT id, nom, preu FROM Hamburguesa limit 2;";
         $result = $conn->query($sql);
         $total = 0;
-        echo $_SESSION['carrito'];
-        
-      
+
         if ($result->num_rows > 0) {
 
             while($row = $result->fetch_assoc()) {
