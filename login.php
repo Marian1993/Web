@@ -87,7 +87,7 @@
                if ($_POST['username'] == 'admin' && 
                   $_POST['password'] == '1234') {
                   $_SESSION['valid'] = true;
-                  $_SESSION['timeout'] = time() + 30;
+                  $_SESSION['timeout'] = time();
                   $_SESSION['username'] = 'admin';
                   
                   echo 'You have entered valid use name and password';
@@ -110,7 +110,11 @@
                name = "password" required>
             <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
                name = "login">Login</button>
-         </form>  
+         </form>
+			
+         Click here to clean <a href = "logout.php" tite = "Logout">Session.
+         
       </div> 
+      
    </body>
 </html>
