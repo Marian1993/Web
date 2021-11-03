@@ -1,6 +1,10 @@
 <?php
 include_once"sessio.php";
 include("lang/".$_COOKIE['idioma'].".php");
+session_start();
+
+$carreto = $_SESSION["carreto"];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,21 +35,14 @@ include("lang/".$_COOKIE['idioma'].".php");
       </thead>
       <tbody>
       <?php
-        $sql = "SELECT id, nom, preu FROM Hamburguesa;";
+        $sql = "SELECT id, nom, preu FROM Hamburguesa LIMIT 2;";
         $result = $conn->query($sql);
         $total = 0;
       
-       if(isset($_SESSION["carrito"])){
+        if ($result->num_rows > 0) {
 
-        foreach($_SESSION["carrito"] as $indice => $array){
-
-            echo "Producto" . $indice . "<br>";
-            foreach($array as $key => $value){
-                echo $key . ": " . $value;
-            }
-
-        }
-       }
+            while($row = $result->fetch_assoc()) {
+              $total += $row["preu"];
         ?>
         <tr>
           <th scope="row"><?php echo $row["id"];?></th>
@@ -57,9 +54,15 @@ include("lang/".$_COOKIE['idioma'].".php");
           <td><?php echo $row["nom"];?></td>
           <td><?php echo $row["preu"];?>€</td>
         </tr>
+          <?php
+        }
+        ?>
       </tbody>
     </table> 
       <?php
+      } else {
+        echo "<p>0 result</p>";
+     }
      mysqli_close($conn);
       ?> 
     <p><?php echo $lang["total"];?><?php echo $total;?>€<br><br></p>

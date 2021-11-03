@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+if (empty($_SESSION["usuario"])) {
+   
+    header("Location: autenticacio.php");
+    exit();
+}
+
+echo "Soy un mensaje secreto";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +30,11 @@
 		<input type="text" name="preu">
 		<br><br>
 		<input type="submit" name="save" value="Enviar">
+		<br>
+		<br>
+		<a href="autenticacio.php">Cerrar sesión</a>
 </form>
 </body>
 </html>
+
+
