@@ -1,17 +1,11 @@
 <?php
 session_start();
 
-if (isset($_SESSION["carrito"])) {
 
-    $carreto = $_SESSION["carrito"];
+echo $_SESSION["carrito"] = $_GET['id'];
 
-}
-$codi = $_GET["id"];
+echo $linia = $carreto[count($carreto)];
 
-$linia = array($_GET["id"]);
-$carreto[count($carreto)] = $linia;
-
-$_SESSION["carrito"] = $carreto;
 
 header("Location: carreto2.php");
 ?>
