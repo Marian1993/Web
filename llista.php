@@ -4,6 +4,8 @@
   if(isset($_GET['idioma'])){ 
     $lang = $_GET['idioma'];
     $_COOKIE['idioma'] = $lang; 
+
+    echo $_COOKIE['idioma'];
   } 
   elseif(isset($_COOKIE['idioma'])){ 
   // Miri que exista el archivo del idioma 
