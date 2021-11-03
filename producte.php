@@ -1,6 +1,7 @@
 <?php
   include_once"sessio.php";
   include("lang/".$_COOKIE['idioma'].".php");
+  session_start();
   
 ?>
 <!DOCTYPE html>
