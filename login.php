@@ -87,7 +87,7 @@
                if ($_POST['username'] == 'admin' && 
                   $_POST['password'] == '1234') {
                   $_SESSION['valid'] = true;
-                  $_SESSION['timeout'] = time();
+                  $_SESSION['timeout'] = time() + 30;
                   $_SESSION['username'] = 'admin';
                   
                   echo 'You have entered valid use name and password';
