@@ -14,12 +14,12 @@ session_start();
 </head>
 <body>
 <div class="contaniner">
-  <div class="i">
+  <div class="row">
     <div class="col-1">
       <p><a href="llista.php"><br><?php echo $lang["volver"];?><br><br><br></a></p>
     </div>
   </div>
-  <div class="i">
+  <div class="row">
     <div class="col-12">
       <table class="table">
       <thead>
@@ -37,36 +37,41 @@ session_start();
 
         if (!empty($_SESSION['carrito'])) {
 
-            for ($i=0; $i < count($_SESSION['carrito']) ; $i++) { 
-            
-    
-              $sql = "SELECT id, nom, preu FROM Hamburguesa where id=" . $_SESSION['carrito'][$i] . ";";
-              
-              
+          for ($i=0; $i < count($_SESSION['carrito']) ; $i++) { 
+          
+  
+            $sql = "SELECT id, nom, preu FROM Hamburguesa where id=" . $_SESSION['carrito'][$i] . ";";
+            $result = $conn->query($sql);
 
-              $total += $i["preu"];    
-      ?>
-        <tr>
-          <th scope="row"><?php echo $i["id"];?></th>
-          <td>
-            <a href="producte.php?id=<?php echo $i["id"];?>">
-              <img src="./Img/<?php echo $i["id"];?>.jpg" class="rounded" height="75px" width="125px">
-            </a>
-          </td>
-          <td><?php echo $i["nom"];?></td>
-          <td><?php echo $i["preu"];?>€</td>
-        </tr>
-        <?php
-                } 
-        ?>
-      </tbody>
-    </table> 
+            if($result->num_rows > 0){
+
+              while($row = $result->fetch_assoc()){
+            
+                $total += $row["preu"];  
+
+                ?>
+                  <tr>
+                    <th scope="row"><?php echo $row["id"];?></th>
+                    <td>
+                      <a href="producte.php?id=<?php echo $row["id"];?>">
+                        <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="75px" width="125px">
+                      </a>
+                    </td>
+                    <td><?php echo $row["nom"];?></td>
+                    <td><?php echo $row["preu"];?>€</td>
+                  </tr>
+                  <?php
+              } 
+                  ?>
+                </tbody>
+              </table> 
       <?php
-              } else {
-                echo "0 result";
-         
+            } else {
+              echo "0 result";
+            }
+          }
         }
-     mysqli_close($conn);
+        mysqli_close($conn);
       ?> 
     <p><?php echo $lang["total"]; 
             echo $total;?>€<br><br>
