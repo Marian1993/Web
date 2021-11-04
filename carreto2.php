@@ -32,19 +32,23 @@ session_start();
       </thead>
       <tbody>
       <?php
-        $sql = "SELECT id, nom, preu FROM Hamburguesa limit 2;";
-        $result = $conn->query($sql);
-        $total = 0;
-        if(!empty($_SESSION['carrito'])){
-          print_r(array_values($_SESSION['carrito']));
-        }
         
+        $total = 0;
 
-        if ($result->num_rows > 0) {
+        if (!empty($_SESSION['carrito'])) {
 
-            while($row = $result->fetch_assoc()) {
-              $total += $row["preu"];
-        ?>
+            for ($i=0; $i < count($_SESSION['carrito']) ; $i++) { 
+            
+    
+              $sql = "SELECT id, nom, preu FROM Hamburguesa where id="$_SESSION['carrito'][$i]";";
+              $result = $conn->query($sql);
+              if($result->num_rows > 0){
+
+                while($row = $result->fetch_assoc()){
+              
+
+              $total += $row["preu"];    
+      ?>
         <tr>
           <th scope="row"><?php echo $row["id"];?></th>
           <td>
@@ -55,15 +59,17 @@ session_start();
           <td><?php echo $row["nom"];?></td>
           <td><?php echo $row["preu"];?>€</td>
         </tr>
-          <?php
-        }
+        <?php
+                } 
         ?>
       </tbody>
     </table> 
       <?php
-      } else {
-        echo "0 result";
-     }
+              } else {
+                echo "0 result";
+            }
+          }
+        }
      mysqli_close($conn);
       ?> 
     <p><?php echo $lang["total"]; 
