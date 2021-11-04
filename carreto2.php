@@ -45,7 +45,7 @@ session_start();
         <tr>
           <th scope="row"><?php echo $row["id"];?></th>
           <td>
-            <a href="http://192.168.0.111/Web/producte.php?id=<?php echo $row["id"];?>">
+            <a href="http://172.16.55.148/Web/producte.php?id=<?php echo $row["id"];?>">
               <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="75px" width="125px">
             </a>
           </td>

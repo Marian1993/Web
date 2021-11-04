@@ -2,14 +2,13 @@
 session_start();
 
 if(!isset($_SESSION['carrito'])){
-    $_SESSION['carrito'] = array();
+    $_SESSION['carrito'] = array($_GET['id']);
+
+}else{
+    $codi = array($_GET['id']);
 }
 
-$codi = array($_GET['id']);
 array_push($_SESSION['carrito'], $codi);
-
-
-
 header("Location: carreto2.php");
 
 /*if (isset($_SESSION["carrito"])) {

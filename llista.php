@@ -15,6 +15,7 @@
     $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
   }
   include("lang/".$lang.".php");
+  //Canviar Ip a llista i a carreto2
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +62,7 @@
     ?>
         <div class="col">
             <div class="p-3 text-center">
-                <a href="http://192.168.0.111/Web/producte.php?id=<?php echo $row["id"];?>">
+                <a href="http://172.16.55.148/Web/producte.php?id=<?php echo $row["id"];?>">
                     <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
                 </a>
                 <p ><?php echo $row["nom"];?></p>
