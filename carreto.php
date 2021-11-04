@@ -63,11 +63,11 @@ session_start();
                   }
                 }
               } 
+            }
           ?>
         </tbody>
       </table> 
       <?php
-          }
         mysqli_close($conn);
       ?> 
     <p>
