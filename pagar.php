@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("Location: carreto2.php");
+header("Location: carreto.php");
 ?>
