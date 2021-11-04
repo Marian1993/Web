@@ -13,7 +13,8 @@ elseif(isset($_COOKIE['idioma'])){
     } 
 }else{
     
-    if((file_exists("lang/". substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) .".php"){
+    if(file_exists("lang/". substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) .".php"){
+
         setcookie ("idioma", substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2), time () + 3600*24);
         $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 
