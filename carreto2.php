@@ -14,12 +14,12 @@ session_start();
 </head>
 <body>
 <div class="contaniner">
-  <div class="row">
+  <div class="i">
     <div class="col-1">
       <p><a href="llista.php"><br><?php echo $lang["volver"];?><br><br><br></a></p>
     </div>
   </div>
-  <div class="row">
+  <div class="i">
     <div class="col-12">
       <table class="table">
       <thead>
@@ -41,23 +41,20 @@ session_start();
             
     
               $sql = "SELECT id, nom, preu FROM Hamburguesa where id=" . $_SESSION['carrito'][$i] . ";";
-              $result = $conn->query($sql);
-              if($result->num_rows > 0){
-
-                while($row = $result->fetch_assoc()){
+              
               
 
-              $total += $row["preu"];    
+              $total += $i["preu"];    
       ?>
         <tr>
-          <th scope="row"><?php echo $row["id"];?></th>
+          <th scope="row"><?php echo $i["id"];?></th>
           <td>
-            <a href="producte.php?id=<?php echo $row["id"];?>">
-              <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="75px" width="125px">
+            <a href="producte.php?id=<?php echo $i["id"];?>">
+              <img src="./Img/<?php echo $i["id"];?>.jpg" class="rounded" height="75px" width="125px">
             </a>
           </td>
-          <td><?php echo $row["nom"];?></td>
-          <td><?php echo $row["preu"];?>€</td>
+          <td><?php echo $i["nom"];?></td>
+          <td><?php echo $i["preu"];?>€</td>
         </tr>
         <?php
                 } 
@@ -67,8 +64,7 @@ session_start();
       <?php
               } else {
                 echo "0 result";
-            }
-          }
+         
         }
      mysqli_close($conn);
       ?> 
