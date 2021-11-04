@@ -1,6 +1,7 @@
 <?php
 include_once"sessio.php";
 include("lang/".$_COOKIE['idioma'].".php");
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,39 +32,50 @@ include("lang/".$_COOKIE['idioma'].".php");
       </thead>
       <tbody>
       <?php
-        $sql = "SELECT id, nom, preu FROM Hamburguesa LIMIT 2;";
-        $result = $conn->query($sql);
+        
         $total = 0;
-      
-        if ($result->num_rows > 0) {
 
-            while($row = $result->fetch_assoc()) {
-              $total += $row["preu"];
-        ?>
-        <tr>
-          <th scope="row"><?php echo $row["id"];?></th>
-          <td>
-            <a href="producte.php?id=<?php echo $row["id"];?>">
-              <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="75px" width="125px">
-            </a>
-          </td>
-          <td><?php echo $row["nom"];?></td>
-          <td><?php echo $row["preu"];?>€</td>
-        </tr>
-          <?php
-        }
-        ?>
-      </tbody>
-    </table> 
+        if (!empty($_SESSION['carrito'])) {
+
+          for ($i=0; $i < count($_SESSION['carrito']) ; $i++) { 
+          
+  
+            $sql = "SELECT id, nom, preu FROM Hamburguesa where id=" . $_SESSION['carrito'][$i] . ";";
+            $result = $conn->query($sql);
+
+            if($result->num_rows > 0){
+
+              while($row = $result->fetch_assoc()){
+            
+                $total += $row["preu"];  
+
+                ?>
+                  <tr>
+                    <th scope="row"><?php echo $row["id"];?></th>
+                    <td>
+                      <a href="producte.php?id=<?php echo $row["id"];?>">
+                        <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="75px" width="125px">
+                      </a>
+                    </td>
+                    <td><?php echo $row["nom"];?></td>
+                    <td><?php echo $row["preu"];?>€</td>
+                  </tr>
+                  <?php
+              }
+            }
+          } 
+                  ?>
+                </tbody>
+              </table> 
       <?php
-      } else {
-        echo "0 result";
-     }
-     mysqli_close($conn);
+        }
+        mysqli_close($conn);
       ?> 
     <p><?php echo $lang["total"]; 
             echo $total;?>€<br><br>
     </p>
+    <br>
+    <a href="pagar.php"><button type="submit" class="btn btn-primary"><?php echo $lang["pagar"]; ?></button></a>
     </div>
   </div>
 </div>
