@@ -22,57 +22,59 @@ session_start();
   <div class="row">
     <div class="col-12">
       <table class="table">
-      <thead>
-        <tr>
-          <th scope="col"><?php echo $lang["producto"];?></th>
-          <th scope="col"><?php echo $lang["imagen"];?></th>
-          <th scope="col"><?php echo $lang["nombre"];?></th>
-          <th scope="col"><?php echo $lang["precio2"];?></th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php
-        
-        $total = 0;
-
-        if (!empty($_SESSION['carrito'])) {
-
-          for ($i=0; $i < count($_SESSION['carrito']) ; $i++) { 
+        <thead>
+          <tr>
+            <th scope="col"><?php echo $lang["producto"];?></th>
+            <th scope="col"><?php echo $lang["imagen"];?></th>
+            <th scope="col"><?php echo $lang["nombre"];?></th>
+            <th scope="col"><?php echo $lang["precio2"];?></th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
           
-  
-            $sql = "SELECT id, nom, preu FROM Hamburguesa where id=" . $_SESSION['carrito'][$i] . ";";
-            $result = $conn->query($sql);
+            $total = 0;
 
-            if($result->num_rows > 0){
+            if (!empty($_SESSION['carrito'])) {
 
-              while($row = $result->fetch_assoc()){
-            
-                $total += $row["preu"];  
+              for ($i=0; $i < count($_SESSION['carrito']) ; $i++) { 
+      
+                $sql = "SELECT id, nom, preu FROM Hamburguesa where id=" . $_SESSION['carrito'][$i] . ";";
+                $result = $conn->query($sql);
 
-                ?>
-                  <tr>
-                    <th scope="row"><?php echo $row["id"];?></th>
-                    <td>
-                      <a href="producte.php?id=<?php echo $row["id"];?>">
-                        <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="75px" width="125px">
-                      </a>
-                    </td>
-                    <td><?php echo $row["nom"];?></td>
-                    <td><?php echo $row["preu"];?>€</td>
-                  </tr>
-                  <?php
-              }
-            }
-          } 
-                  ?>
-                </tbody>
-              </table> 
+                if($result->num_rows > 0){
+
+                  while($row = $result->fetch_assoc()){
+                
+                    $total += $row["preu"];  
+
+          ?>
+          <tr>
+            <th scope="row"><?php echo $row["id"];?></th>
+            <td>
+              <a href="producte.php?id=<?php echo $row["id"];?>">
+                <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="75px" width="125px">
+              </a>
+            </td>
+            <td><?php echo $row["nom"];?></td>
+            <td><?php echo $row["preu"];?>€</td>
+          </tr>
+          <?php
+                  }
+                }
+              } 
+          ?>
+        </tbody>
+      </table> 
       <?php
-        }
+          }
         mysqli_close($conn);
       ?> 
-    <p><?php echo $lang["total"]; 
-            echo $total;?>€<br><br>
+    <p>
+      <?php 
+      echo $lang["total"]; 
+      echo $total;
+      ?>€<br><br>
     </p>
     <br>
     <a href="pagar.php"><button type="submit" class="btn btn-primary"><?php echo $lang["pagar"]; ?></button></a>
