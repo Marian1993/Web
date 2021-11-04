@@ -8,6 +8,6 @@ if(!isset($_SESSION['carrito'])){
 $codi =$_GET['id'];
 array_push($_SESSION['carrito'], $codi);
 
-header("Location: carreto2.php");
+header("Location: carreto.php");
 
 ?>
