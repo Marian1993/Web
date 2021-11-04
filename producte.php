@@ -21,7 +21,7 @@
             </div>
         </div>
     <?php
-    $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa where id =" . $_GET["id"] . ";";
+    $sql = "SELECT id, nom, tipusCarn, preu FROM Hamburguesa where id ="$_GET["id"]";";
     $result = $conn->query($sql);
    
         
