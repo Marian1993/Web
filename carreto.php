@@ -44,7 +44,7 @@ session_start();
 
                 if($result->num_rows > 0){
 
-                  while($row = $result->fetch_assoc()){
+                  $row = $result->fetch_assoc());
                 
                     $total += $row["preu"];  
 
@@ -60,7 +60,7 @@ session_start();
             <td><?php echo $row["preu"];?>€</td>
           </tr>
           <?php
-                  }
+                  
                 }
               } 
             }
