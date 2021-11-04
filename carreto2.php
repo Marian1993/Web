@@ -61,15 +61,13 @@ session_start();
                     <td><?php echo $row["preu"];?>€</td>
                   </tr>
                   <?php
-              } 
+              }
+            }
+          } 
                   ?>
                 </tbody>
               </table> 
       <?php
-            } else {
-              echo "0 result";
-            }
-          }
         }
         mysqli_close($conn);
       ?> 
