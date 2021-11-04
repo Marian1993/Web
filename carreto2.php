@@ -40,7 +40,7 @@ session_start();
             for ($i=0; $i < count($_SESSION['carrito']) ; $i++) { 
             
     
-              $sql = "SELECT id, nom, preu FROM Hamburguesa where id="$_SESSION['carrito'][$i]";";
+              $sql = "SELECT id, nom, preu FROM Hamburguesa where id=" . $_SESSION['carrito'][$i] . ";";
               $result = $conn->query($sql);
               if($result->num_rows > 0){
 
