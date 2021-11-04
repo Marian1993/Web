@@ -17,5 +17,6 @@ $lang = array(
   "total" => "Total: ",
   "precio2" => "Precio",
   "volver" => "Volver",
+  "pagar" => "Pagar",
 );
 ?>

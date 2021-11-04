@@ -45,7 +45,7 @@ session_start();
         <tr>
           <th scope="row"><?php echo $row["id"];?></th>
           <td>
-            <a href="http://172.16.55.148/Web/producte.php?id=<?php echo $row["id"];?>">
+            <a href="producte.php?id=<?php echo $row["id"];?>">
               <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="75px" width="125px">
             </a>
           </td>
@@ -66,6 +66,8 @@ session_start();
     <p><?php echo $lang["total"]; 
             echo $total;?>€<br><br>
     </p>
+    <br>
+    <a href="pagar.php"><button type="submit" class="btn btn-primary"><?php echo $lang["pagar"]; ?></button></a>
     </div>
   </div>
 </div>
