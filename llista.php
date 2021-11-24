@@ -35,7 +35,7 @@
 
     <div class="row justify-content-end">
         <div class="col-12 text-right">
-        <p text-align="right"><a href="carreto.php"><?php echo $lang["carrito"];?><br><br></a></p>
+        <p text-align="right"><a href="carreto"><?php echo $lang["carrito"];?><br><br></a></p>
         </div>
     </div>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
@@ -48,7 +48,7 @@
     ?>
         <div class="col">
             <div class="p-3 text-center">
-                <a href="producte.php?id=<?php echo $row["id"];?>">
+                <a href="<?php echo $row["id"];?>">
                     <img src="./Img/<?php echo $row["id"];?>.jpg" class="rounded" height="150px" width="200px">
                 </a>
                 <p ><?php echo $row["nom"];?></p>

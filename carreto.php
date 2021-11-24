@@ -16,7 +16,7 @@ session_start();
 <div class="contaniner">
   <div class="row">
     <div class="col-1">
-      <p><a href="llista.php"><br><?php echo $lang["volver"];?><br><br><br></a></p>
+      <p><a href="llista"><br><?php echo $lang["volver"];?><br><br><br></a></p>
     </div>
   </div>
   <div class="row">
@@ -45,9 +45,7 @@ session_start();
                 if($result->num_rows > 0){
 
                   $row = $result->fetch_assoc();
-                
-                    $total += $row["preu"];  
-
+                  $total += $row["preu"];  
           ?>
           <tr>
             <th scope="row"><?php echo $row["id"];?></th>
@@ -60,7 +58,6 @@ session_start();
             <td><?php echo $row["preu"];?>€</td>
           </tr>
           <?php
-                  
                 }
               } 
             }
